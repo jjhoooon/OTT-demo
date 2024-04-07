@@ -12,7 +12,7 @@ const PopularMovieSlide = () => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3,
+            items: 5,
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -31,6 +31,8 @@ const PopularMovieSlide = () => {
         return <Alert variant="danger">{error.message}</Alert>
     }
 
+    console.log(data.results[0].title)
+
     return (
         <div className="movie-slide">
             <h3>Popular Movies</h3>
@@ -41,7 +43,7 @@ const PopularMovieSlide = () => {
                 containerClass="carousel-container"
                 responsive={responsive}
             >
-                {data?.results.map((index, movie) => <MovieCard key={index} movie={movie} />)}
+                {data?.results.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
             </Carousel>;
         </div>
     )
