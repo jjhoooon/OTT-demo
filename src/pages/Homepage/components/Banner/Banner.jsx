@@ -1,4 +1,4 @@
-import { usePopularMoviesQuery } from '../../../../hooks/userPopularMovies'
+import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert';
 import './Banner.style.css'
 // 1. loading spinner
