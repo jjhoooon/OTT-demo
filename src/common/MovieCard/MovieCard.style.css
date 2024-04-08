@@ -1,0 +1,50 @@
+.movie-card-image {
+  width: 220px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  /* background-size: contain; */
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.movie-card-image:hover {
+  transform: scale(1.3) translateZ(20px);
+  z-index: 2;
+}
+
+.release-title {
+  opacity: 1;
+}
+
+.release-title:hover {
+  opacity: 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 41, 41, 0.9);
+  opacity: 0;
+  transition: all 1s;
+  color: white;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  padding: 10px;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlay > * {
+  background-color: transparent;
+}
+
+@media (max-width: 500px) {
+  .movie-card-image:hover {
+    transform: scale(1.15) translateZ(20px);
+    z-index: 2;
+  }
+}

@@ -1,0 +1,15 @@
+.release-date-container {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 5px;
+  background-color: rgb(190, 111, 111);
+  /* border: 2px solid #262626;
+  border-radius: 20px; */
+  opacity: 0.8;
+}
+
+.release-date-container:hover {
+  opacity: 0;
+}

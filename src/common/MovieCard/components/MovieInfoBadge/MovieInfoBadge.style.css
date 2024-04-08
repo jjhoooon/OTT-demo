@@ -1,0 +1,13 @@
+.movie-info-container {
+  display: flex;
+  margin: 10px 0;
+  /* justify-content: space-around; */
+}
+
+.movie-info-container > * {
+  background-color: transparent;
+}
+
+.info-content {
+  margin: 0 10px;
+}
