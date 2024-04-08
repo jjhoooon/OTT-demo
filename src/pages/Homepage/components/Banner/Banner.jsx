@@ -21,8 +21,8 @@ const Banner = () => {
             backgroundImage: "url(https://media.themoviedb.org/t/p/w533_and_h300_bestv2/" + `${poster_path}` + ")"
         }}>
             <div className='text-white banner-text-area'>
-                <h1>{title}</h1>
-                <p>{overview}</p>
+                <div className='banner-title'>{title}</div>
+                <div className='banner-overview'>{overview}</div>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import './RealeaseDate.style.css'
+import './ReleaseDate.style.css'
 
 const ReleaseDate = ({ date }) => {
     const dateObj = new Date(date);

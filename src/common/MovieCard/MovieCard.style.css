@@ -37,3 +37,14 @@
 .overlay:hover {
   opacity: 1;
 }
+
+.overlay > * {
+  background-color: transparent;
+}
+
+@media (max-width: 500px) {
+  .movie-card-image:hover {
+    transform: scale(1.15) translateZ(20px);
+    z-index: 2;
+  }
+}
