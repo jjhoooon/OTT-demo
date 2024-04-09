@@ -3,10 +3,24 @@ import './MovieCard.style.css'
 import ReleaseDate from './components/ReleaseDate/ReleaseDate'
 import { Badge } from 'react-bootstrap'
 import MovieInfoBadge from './components/MovieInfoBadge/MovieInfoBadge'
+import { useMovieGenreQuery } from '../../hooks/useMovieGenre'
 
 let imagePath = `https://www.themoviedb.org/t/p/w1066_and_h600_bestv2`
 
 const MovieCard = ({ movie }) => {
+
+    const { data: genreData } = useMovieGenreQuery()
+    const movie_genre_id = movie.genre_ids
+
+    const showGenre = (genreIdList) => {
+        if (!genreData) return []
+        const genreNameList = genreIdList.map((id) => {
+            const genreObj = genreData.find((genre) => genre.id === id)
+            return genreObj.name
+        })
+
+        return genreNameList
+    }
 
     const movie_score = movie.vote_average.toFixed(1)
     const movie_vote = movie.vote_count
@@ -22,6 +36,9 @@ const MovieCard = ({ movie }) => {
             />
             <div className='overlay'>
                 <div>{movie.title}</div>
+                {showGenre(movie_genre_id).map((genre, idx) => (
+                    <MovieInfoBadge key={idx} title={genre} bg="danger" color="black" info="" />
+                ))}
                 {movie.adult && <MovieInfoBadge title="Adult Only" bg="danger" color="white" info="" />}
                 <MovieInfoBadge title="LIKES" bg="success" color="black" info={movie_vote} />
                 <MovieInfoBadge title="SCORE" bg="warning" color="black" info={movie_score} />
