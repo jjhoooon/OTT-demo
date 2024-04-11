@@ -4,10 +4,16 @@ import ReleaseDate from './components/ReleaseDate/ReleaseDate'
 import { Badge } from 'react-bootstrap'
 import MovieInfoBadge from './components/MovieInfoBadge/MovieInfoBadge'
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre'
+import { useNavigate } from 'react-router-dom'
 
 let imagePath = `https://www.themoviedb.org/t/p/w1066_and_h600_bestv2`
 
 const MovieCard = ({ movie }) => {
+    const navigate = useNavigate()
+
+    const showMovieDetail = (id) => {
+        navigate(`/movies/${id}`)
+    }
 
     const { data: genreData } = useMovieGenreQuery()
     const movie_genre_id = movie.genre_ids
@@ -29,7 +35,9 @@ const MovieCard = ({ movie }) => {
     return (
         <div className='movie-card-image' style={{
             backgroundImage: "url(" + `${imagePath + movie.backdrop_path}` + ")"
-        }} >
+        }}
+            onClick={() => showMovieDetail(movie.id)}
+        >
             <ReleaseDate
                 className='release-title'
                 date={movie.release_date}
