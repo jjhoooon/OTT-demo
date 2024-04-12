@@ -7,6 +7,7 @@
   /* background-size: contain; */
   cursor: pointer;
   transition: 0.5s;
+  z-index: 3;
 }
 
 .movie-card-image:hover {

@@ -51,7 +51,6 @@ const MovieCard = ({ movie }) => {
                 <MovieInfoBadge title="LIKES" bg="success" color="black" info={movie_vote} />
                 <MovieInfoBadge title="SCORE" bg="warning" color="black" info={movie_score} />
                 <MovieInfoBadge title="POPULARITY" bg="secondary" color="black" info={movie_popularity} />
-
             </div>
         </div>
     )

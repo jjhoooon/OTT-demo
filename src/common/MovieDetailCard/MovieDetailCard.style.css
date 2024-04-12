@@ -1,0 +1,14 @@
+* {
+  color: aliceblue;
+}
+
+.movie-detail-image {
+  width: 220px;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  /* background-size: contain; */
+  cursor: pointer;
+  transition: 0.5s;
+}
