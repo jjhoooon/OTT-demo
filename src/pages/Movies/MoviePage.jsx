@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSearchMovieQuery } from '../../hooks/useSearchMovie'
 import { useSearchParams } from 'react-router-dom'
 import { Alert } from 'bootstrap'
@@ -16,6 +16,7 @@ import ReactPaginate from 'react-paginate';
 // 페이지네이션 클릭할때마다 page 바꿔주기
 // page 값이 바뀔때 마다 useSearchMovie에 page까지 넣어서 fetch
 const MoviePage = () => {
+    const [sortOrder, setSortOrder] = useState(false)
     const [query, setQuery] = useSearchParams()
     const [page, setPage] = useState(1)
     const keyword = query.get("q")
@@ -27,6 +28,26 @@ const MoviePage = () => {
         setPage(page.selected + 1)
     }
 
+    const handleSortMovie = () => {
+        setSortOrder(true)
+        if (sortOrder) {
+            setSortOrder(false)
+        }
+    }
+
+    useEffect(() => {
+
+    }, [sortOrder])
+
+    if (sortOrder) {
+        data?.results.sort((a, b) => a.popularity - b.popularity)
+    }
+
+    if (!sortOrder) {
+        data?.results.sort((a, b) => b.popularity - a.popularity)
+    }
+
+
     if (isLoading) {
         return <h1>Loading...</h1>
     }
@@ -35,11 +56,14 @@ const MoviePage = () => {
         return <Alert variant="danger">{error.message}</Alert>
     }
 
+
     console.log("aaa", data)
     return (
         <Container>
             <Row>
-                <Col lg={4} xs={12}>필터</Col>
+                <Col lg={4} xs={12}>
+                    <button onClick={handleSortMovie}>인기도 오름차순 정렬</button>
+                </Col>
                 <Col lg={8} xs={12}>
                     {/* 카드의 정렬을 위한 Row */}
                     <Row>
