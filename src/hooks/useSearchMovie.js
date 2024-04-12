@@ -4,7 +4,7 @@ import api from "../utils/api"
 const fetchSearchedMovie = ({ keyword, page }) => {
     //키워드가 있고 없고의 분기 지점.
     //상황에 따라 2개의 다른 url을 호출.
-    return keyword ? api.get(`search/movie?query=${keyword}&page=${page}`)
+    return keyword ? api.get(`search/movie?query=${keyword}&page=${page}&language=ko-KR`)
         : api.get(`/movie/popular?page=${page}`)
 
 

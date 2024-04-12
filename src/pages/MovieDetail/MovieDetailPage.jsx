@@ -6,6 +6,9 @@ import MovieDetailCard from '../../common/MovieDetailCard/MovieDetailCard'
 import MovieReview from './components/MovieReview/MovieReview'
 import { useRecommendMovies } from '../../hooks/useRecommendMovies'
 import MovieRecommend from './components/MovieRecommend/MovieRecommend'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 // 상세페이지를 디자인하자
 // 1.영화 포스터(poster_path)
@@ -61,7 +64,7 @@ const MovieDetailPage = () => {
 
 
     return (
-        <div>
+        <Container>
             <MovieDetailCard detailInfo={detailInfo} />
             <div>
                 <h1>아래는 Review 스페이스입니다.</h1>
@@ -69,7 +72,7 @@ const MovieDetailPage = () => {
             <button onClick={handleTab}>리뷰</button>
             {isReviewTab && <MovieReview reviews={reviews} />}
             {!isReviewTab && <MovieRecommend recommends={recommends} />}
-        </div>
+        </Container>
     )
 }
 
