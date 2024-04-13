@@ -4,7 +4,9 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { ReactComponent as PopularityLogo } from '../../assets/popularity.svg'
-import Button from 'react-bootstrap/Button';
+import { ReactComponent as BudgetLogo } from '../../assets/budget.svg'
+import { ReactComponent as DateLogo } from '../../assets/date.svg'
+
 import Modal from 'react-bootstrap/Modal';
 import YouTube from 'react-youtube';
 import { opts } from '../../constants/opts'
@@ -36,23 +38,35 @@ const MovieDetailCard = ({ detailInfo, videos }) => {
                         backgroundImage: `url(${poster_path})`
                     }}></div>
                 </Col>
-                <Col lg={9}>
+                <Col className='movie-detail-info-container' lg={9}>
                     <div className='title'>{title} ({release_year})</div>
                     <div className='popularity'>
                         <PopularityLogo className='logo' />
                         {popularity}
                     </div>
                     <div className='overview'>
-                        <h3>개요</h3>
+                        <div className='overview-title'>
+                            개요
+                        </div>
                         {overview}
                     </div>
-                    <div className='budget'>
-                        {movie_budget}
+                    <div className='movie-detail-info-box'>
+                        <div className='popularity'>
+                            <PopularityLogo className='logo' />
+                            {popularity}
+                        </div>
+                        <div className='budget'>
+                            <BudgetLogo className='logo' />
+                            {movie_budget}
+                        </div>
+                        <div className='release_date'>
+                            <DateLogo className='logo' />
+                            {release_date}
+                        </div>
                     </div>
-                    <div className='release_date'>{release_date}</div>
-                    <Button variant="primary" onClick={handleShow}>
+                    <button className='teaser-button' onClick={handleShow}>
                         예고편 보기
-                    </Button>
+                    </button>
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>{title}</Modal.Title>
@@ -63,6 +77,7 @@ const MovieDetailCard = ({ detailInfo, videos }) => {
                     </Modal>
                 </Col>
             </Row>
+            <hr />
         </Container>
     )
 }

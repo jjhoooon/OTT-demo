@@ -7,6 +7,7 @@ const MovieReview = ({ reviews }) => {
 
     return (
         <div>
+            <div className='review-title'>Reviews</div>
             {reviews?.map((review, id) => (
                 <MovieReviewCard key={id} review={review} />
             ))}

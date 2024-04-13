@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './MovieReviewCard.style.css'
+import { ReactComponent as AuthorLogo } from '../../assets/author.svg'
 
 const MovieReviewCard = ({ review }) => {
 
@@ -12,9 +13,11 @@ const MovieReviewCard = ({ review }) => {
     }
 
     return (
-        <div>
-            <h1>{review.author}</h1>
-            {/* <div>{review.content}</div> */}
+        <div className='review-card-container'>
+            <div className='review-author'>
+                <AuthorLogo className='author-logo' />
+                {review.author}
+            </div>
             <div className={`content ${isExpanded ? 'expanded' : 'collapsed'}`}>
                 {review.content}
             </div>

@@ -7,8 +7,7 @@ import MovieReview from './components/MovieReview/MovieReview'
 import { useRecommendMovies } from '../../hooks/useRecommendMovies'
 import MovieRecommend from './components/MovieRecommend/MovieRecommend'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import './MovieDetailPage.style.css'
 
 
 import { useMovieVideoQuery } from '../../hooks/useMovieVideo'
@@ -67,8 +66,8 @@ const MovieDetailPage = () => {
     return (
         <Container>
             <MovieDetailCard detailInfo={detailInfo} videos={videos} />
-            <button onClick={() => handleTab("review")}>리뷰</button>
-            <button onClick={() => handleTab("recommend")}>추천</button>
+            <button className='detail-tab-button' onClick={() => handleTab("review")}>리뷰</button>
+            <button className='detail-tab-button' onClick={() => handleTab("recommend")}>추천</button>
             {tabState == "review" && <MovieReview reviews={reviews} />}
             {tabState == "recommend" && <MovieRecommend recommends={recommends} />}
         </Container>

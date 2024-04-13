@@ -1,0 +1,27 @@
+.detail-tab-button {
+  width: 100px;
+  background: linear-gradient(to right, purple, red);
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 0 grey, 2px 2px 0 red, 3px 3px 0 grey, 4px 4px 0 #000;
+  transition: all 0.3s ease;
+}
+
+.detail-tab-button:hover {
+  background: linear-gradient(
+    to right,
+    red,
+    pink
+  ); /* 호버 시 그라데이션 방향 변경 */
+  transform: translateY(1px); /* 호버 시 눌림 효과 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 크기 감소 */
+}
