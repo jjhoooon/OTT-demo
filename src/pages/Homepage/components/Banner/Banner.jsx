@@ -1,13 +1,17 @@
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert';
 import './Banner.style.css'
-// 1. loading spinner
+import Spinner from 'react-bootstrap/Spinner';
+
 const Banner = () => {
     const { data, isLoading, isError, error } = usePopularMoviesQuery()
-    console.log("ddd", data, isLoading, isError, error)
+
     if (isLoading) {
-        return <h1>Loading...</h1>
+        return <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     }
+
     if (isError) {
         return <Alert variant='danger'>{error.message}</Alert>
     }

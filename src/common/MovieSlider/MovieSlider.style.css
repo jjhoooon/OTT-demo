@@ -4,17 +4,23 @@
 }
 
 .movie-slider-title {
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 48px;
+  font-size: 60px;
+  font-family: "Black Han Sans", sans-serif;
   font-weight: bold;
-  color: bisque;
-  opacity: 0.5;
+  text-shadow: 1px 1px 0 red, 2px 2px 0 red, 3px 3px 0 red, 4px 4px 0 #000;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .carousel-container {
     height: 330px;
     display: flex;
     justify-content: space-between;
+  }
+  .movie-slider-title {
+    font-size: 40px;
+    font-family: "Black Han Sans", sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 red, 2px 2px 0 red, 3px 3px 0 red, 4px 4px 0 #000;
+    margin: 20px 0;
   }
 }

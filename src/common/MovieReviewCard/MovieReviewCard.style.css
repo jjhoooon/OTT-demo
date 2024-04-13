@@ -1,0 +1,45 @@
+.review-card-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex; /* flexbox 사용 */
+  flex-direction: column; /* 자식 요소를 세로로 정렬 */
+}
+
+.review-card-container > * {
+  margin-bottom: 10px;
+}
+
+.review-author {
+  font-size: 24px;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: bold;
+}
+
+.author-logo {
+  fill: white;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 5px 0;
+}
+
+.content {
+  font-size: 16px;
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.content.collapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.content.expanded {
+  display: block;
+}
