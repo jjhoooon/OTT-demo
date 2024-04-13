@@ -10,7 +10,7 @@ import ReactPaginate from 'react-paginate';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre'
 import GenreButton from './components/GenreButton/GenreButton'
 import './MoviePage.style.css'
-
+import Spinner from 'react-bootstrap/Spinner';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
@@ -25,7 +25,6 @@ const MoviePage = () => {
     const { data, isLoading, isError, error } = useSearchMovieQuery({ keyword, page })
     const { data: genreData } = useMovieGenreQuery()
 
-    console.log("data", data)
 
     const handlePageClick = (page) => {
         console.log("ppp", page)
@@ -79,17 +78,16 @@ const MoviePage = () => {
         });
     }
 
-
     if (isLoading) {
-        return <h1>Loading...</h1>
+        return <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     }
 
     if (isError) {
         return <Alert variant="danger">{error.message}</Alert>
     }
 
-
-    console.log("aaa", data)
     return (
         <Container>
             <Row>

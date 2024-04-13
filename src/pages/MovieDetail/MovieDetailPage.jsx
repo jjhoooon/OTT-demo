@@ -9,18 +9,9 @@ import MovieRecommend from './components/MovieRecommend/MovieRecommend'
 import Container from 'react-bootstrap/Container'
 import './MovieDetailPage.style.css'
 import { useMovieVideoQuery } from '../../hooks/useMovieVideo'
-
-// 상세페이지를 디자인하자
-// 1.영화 포스터(poster_path)
-// 2.영화 제목
-// 3.장르
-// 4.영화 인기도
-// 5.영화 줄거리
-// 6.예산
-// 7.개봉일
+import Spinner from 'react-bootstrap/Spinner';
 
 const MovieDetailPage = () => {
-
 
     let { id } = useParams()
     const [tabState, setTabState] = useState("review")
@@ -50,9 +41,10 @@ const MovieDetailPage = () => {
     console.log("dada", detailInfo)
 
     if (isLoading) {
-        return <div>isLoading</div>
+        return <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </Spinner>
     }
-
     if (isError) {
         return <div>{error.message}</div>
     }
