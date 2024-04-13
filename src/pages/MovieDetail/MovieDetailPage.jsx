@@ -10,10 +10,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import YouTube from 'react-youtube';
-import { opts } from '../../constants/opts'
+
 import { useMovieVideoQuery } from '../../hooks/useMovieVideo'
 
 // 상세페이지를 디자인하자
@@ -30,11 +27,6 @@ const MovieDetailPage = () => {
     let { id } = useParams()
     const [tabState, setTabState] = useState("review")
 
-    //show
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const { data: md, isLoading, isError, error } = useMovieDetailQuery({ id })
     const { data: reviews } = useMovieReviewQuery({ id })
@@ -54,7 +46,6 @@ const MovieDetailPage = () => {
         release_date: md?.release_date,
     }
 
-    console.log("vvvv", videos)
 
     console.log("iii", id) //movieId 로 할때는 왜 undefined??
 
@@ -73,22 +64,9 @@ const MovieDetailPage = () => {
     }
 
 
-
-
     return (
         <Container>
-            <MovieDetailCard detailInfo={detailInfo} />
-            <Button variant="primary" onClick={handleShow}>
-                예고편 보기
-            </Button>
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{md.title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <YouTube videoId={videos} opts={opts} />;
-                </Modal.Body>
-            </Modal>
+            <MovieDetailCard detailInfo={detailInfo} videos={videos} />
             <button onClick={() => handleTab("review")}>리뷰</button>
             <button onClick={() => handleTab("recommend")}>추천</button>
             {tabState == "review" && <MovieReview reviews={reviews} />}
