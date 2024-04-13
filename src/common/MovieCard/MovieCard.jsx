@@ -24,13 +24,14 @@ const MovieCard = ({ movie }) => {
             const genreObj = genreData.find((genre) => genre.id === id)
             return genreObj.name
         })
-
         return genreNameList
     }
 
     const movie_score = movie.vote_average.toFixed(1)
     const movie_vote = movie.vote_count
     const movie_popularity = Math.floor(movie.popularity)
+    const movie_release_date = new Date(movie.release_date)
+    const movie_release_year = movie_release_date.getFullYear()
 
     return (
         <div className='movie-card-image' style={{
@@ -38,12 +39,8 @@ const MovieCard = ({ movie }) => {
         }}
             onClick={() => showMovieDetail(movie.id)}
         >
-            <ReleaseDate
-                className='release-title'
-                date={movie.release_date}
-            />
             <div className='overlay'>
-                <div>{movie.title}</div>
+                <div>{movie.title} ({movie_release_year})</div>
                 {showGenre(movie_genre_id).map((genre, idx) => (
                     <MovieInfoBadge key={idx} title={genre} bg="danger" color="black" info="" />
                 ))}

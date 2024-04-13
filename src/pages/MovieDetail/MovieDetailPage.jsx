@@ -8,8 +8,6 @@ import { useRecommendMovies } from '../../hooks/useRecommendMovies'
 import MovieRecommend from './components/MovieRecommend/MovieRecommend'
 import Container from 'react-bootstrap/Container'
 import './MovieDetailPage.style.css'
-
-
 import { useMovieVideoQuery } from '../../hooks/useMovieVideo'
 
 // 상세페이지를 디자인하자
@@ -22,6 +20,7 @@ import { useMovieVideoQuery } from '../../hooks/useMovieVideo'
 // 7.개봉일
 
 const MovieDetailPage = () => {
+
 
     let { id } = useParams()
     const [tabState, setTabState] = useState("review")

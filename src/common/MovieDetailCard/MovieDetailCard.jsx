@@ -40,10 +40,6 @@ const MovieDetailCard = ({ detailInfo, videos }) => {
                 </Col>
                 <Col className='movie-detail-info-container' lg={9}>
                     <div className='title'>{title} ({release_year})</div>
-                    <div className='popularity'>
-                        <PopularityLogo className='logo' />
-                        {popularity}
-                    </div>
                     <div className='overview'>
                         <div className='overview-title'>
                             개요

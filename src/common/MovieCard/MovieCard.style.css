@@ -15,14 +15,6 @@
   z-index: 2;
 }
 
-.release-title {
-  opacity: 1;
-}
-
-.release-title:hover {
-  opacity: 0;
-}
-
 .overlay {
   width: 100%;
   height: 100%;
@@ -46,6 +38,6 @@
 @media (max-width: 500px) {
   .movie-card-image:hover {
     transform: scale(1.15) translateZ(20px);
-    z-index: 2;
+    z-index: 7;
   }
 }
