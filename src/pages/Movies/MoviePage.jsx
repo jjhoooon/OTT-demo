@@ -97,7 +97,7 @@ const MoviePage = () => {
                             <GenreButton key={index} genre={genre} genreFilter={genreFilter} setGenreFilter={setGenreFilter} />
                         )}
                     </div>
-                    <DropdownButton variant='secondary' className='sort-button' title="정렬기준">
+                    <DropdownButton variant='secondary' className='sort-button custom-dropdown' title="정렬기준">
                         <Dropdown.Item onClick={() => handleSortMovie("popularity-asc")}>인기도 오름차순</Dropdown.Item>
                         <Dropdown.Item onClick={() => handleSortMovie("popularity-dsc")}>인기도 내림차순</Dropdown.Item>
                         <Dropdown.Item onClick={() => handleSortMovie("vote-asc")}>투표 오름차순</Dropdown.Item>
