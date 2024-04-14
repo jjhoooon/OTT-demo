@@ -3,7 +3,7 @@ import './MovieReview.style.css'
 
 const MovieReview = ({ reviews }) => {
 
-    console.log("rsrs", reviews)
+    // console.log("rsrs", reviews)
 
     return (
         <div>

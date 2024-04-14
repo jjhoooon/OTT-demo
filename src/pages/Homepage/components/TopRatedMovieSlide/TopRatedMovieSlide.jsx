@@ -15,8 +15,6 @@ const TopRatedMovieSlide = () => {
         return <Alert variant="danger">{error.message}</Alert>
     }
 
-    console.log("dddd", data)
-
     return (
         <div>
             <MovieSlider title="Top Rated Movies" movies={data.results} responsive={responsive} />

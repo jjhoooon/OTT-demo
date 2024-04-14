@@ -16,7 +16,7 @@ function formatNumber(num) {
 }
 
 const MovieDetailCard = ({ detailInfo, videos }) => {
-    console.log("detailInfo", detailInfo)
+    // console.log("detailInfo", detailInfo)
     //show
     const [show, setShow] = useState(false);
 

@@ -28,7 +28,6 @@ const MovieDetailPage = () => {
         id: id,
         poster_path: poster_path,
         title: md?.original_title,
-        // genres
         popularity: md?.popularity,
         overview: md?.overview,
         budget: md?.budget,
@@ -36,9 +35,9 @@ const MovieDetailPage = () => {
     }
 
 
-    console.log("iii", id) //movieId 로 할때는 왜 undefined??
+    // console.log("iii", id) //movieId 로 할때는 왜 undefined??
 
-    console.log("dada", detailInfo)
+    // console.log("dada", detailInfo)
 
     if (isLoading) {
         return <Spinner animation="border" role="status">
