@@ -55,3 +55,10 @@
   background-color: #c41e3a !important;
   border-color: #c41e3a !important;
 }
+
+@media (max-width: 500px) {
+  .movie-card-container {
+    display: flex;
+    justify-content: center;
+  }
+}
