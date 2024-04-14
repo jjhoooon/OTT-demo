@@ -5,42 +5,55 @@
 
 .pagination {
   display: flex;
-  list-style-type: none;
+  list-style: none;
   padding: 0;
-  justify-content: center; /* 중앙 정렬 */
+  justify-content: center;
 }
 
 .page-item {
-  margin: 0 5px; /* 각 아이템 사이 간격 */
+  margin: 0 2px;
 }
 
 .page-link {
-  border: 1px solid yellow; /* 테두리 색상 */
+  border-radius: 5px;
   padding: 5px 10px;
-  color: #d126e7;
-  text-decoration: none; /* 밑줄 제거 */
-  border-radius: 5px; /* 모서리 둥글게 */
-  cursor: pointer;
+  text-decoration: none;
+  color: white !important;
+  background-color: red !important;
+  font-size: 12px !important;
+  font-weight: bold;
+}
+
+.page-link.active,
+.pagination .active .page-link {
+  background-color: darkred !important;
+  border-color: darkred !important;
 }
 
 .page-link:hover {
-  transform: translateY(3px);
-  background-color: yellow;
+  background-color: crimson !important;
+  border-color: crimson !important;
+  transform: translateY(2px);
 }
 
-.page-link.active {
-  background-color: yellow; /* 활성 페이지 배경색 */
-  color: navajowhite; /* 활성 페이지 글자색 */
+.custom-dropdown .btn-secondary {
+  margin: 20px 10px 30px 10px;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  background-color: #ff6347 !important;
+  color: #ffffff !important;
+  border-color: #ff6347 !important;
 }
 
-/* Hover state for page link */
-.page-link:hover {
-  background-color: yellow;
-  color: white;
+.custom-dropdown .btn-secondary:focus,
+.custom-dropdown .btn-secondary:hover {
+  background-color: #e52b50 !important;
+  border-color: #e52b50 !important;
 }
 
-.sort-button {
-  margin: 10px 0 30px 9px;
+.custom-dropdown .btn-secondary:active {
+  background-color: #c41e3a !important;
+  border-color: #c41e3a !important;
 }
 
 @media (max-width: 500px) {

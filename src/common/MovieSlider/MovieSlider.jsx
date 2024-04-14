@@ -5,7 +5,6 @@ import MovieCard from '../MovieCard/MovieCard'
 
 const MovieSlider = ({ title, movies, responsive }) => {
 
-    console.log("mmm", movies)
 
     return (
         <div>

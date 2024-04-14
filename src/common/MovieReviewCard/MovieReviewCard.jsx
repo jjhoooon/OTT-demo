@@ -4,7 +4,7 @@ import { ReactComponent as AuthorLogo } from '../../assets/author.svg'
 
 const MovieReviewCard = ({ review }) => {
 
-    console.log("aaa", review.author)
+    // console.log("aaa", review.author)
 
     const [isExpanded, setIsExpanded] = useState(false);
 
